@@ -9,9 +9,12 @@ void my_sum(char types,int args, ...){
     switch(types){
         case 'S':
             for(int i = 0; i<args; i++){
-                printf("%s ",va_arg(ap, char*));
+                if(i == args-1)
+                    printf("%s\n",va_arg(ap, char*));
+                else
+                    printf("%s ",va_arg(ap, char*));
+                
             }
-            printf("\n");
             break;
         case 'C':
             for(int i = 0; i<args; i++){
